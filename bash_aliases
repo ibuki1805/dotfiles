@@ -19,7 +19,7 @@ function cmk()
 
 function search()
 {
-  grep $@ -rnC 1 .
+  grep "$@" -sIrnC 1 .
 }
 
 function format_c()
