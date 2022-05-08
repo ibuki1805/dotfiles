@@ -25,6 +25,7 @@ SCRIPT_DIR=$(cd $(dirname $0); pwd)
 # echo "setting vim end"
 
 echo "setting neo-vim"
+sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
 sudo apt install neovim
 git clone https://github.com/Shougo/dein.vim.git ~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
