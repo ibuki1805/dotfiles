@@ -68,4 +68,8 @@ echo "setting bash_aliases"
 echo "source $SCRIPT_DIR/bash_aliases" >> ~/.bash_aliases
 echo "setting bash_aliases end"
 
+echo "please remap capslock to control"
+echo "open /etc/default/keyboard"
+echo "change 'XKBOPTIONS' to 'XKBOPTIONS=\"ctrl:nocaps\"'"
+
 source ~/.bashrc
