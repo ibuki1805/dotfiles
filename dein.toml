@@ -1,0 +1,71 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = 'ekalinin/Dockerfile.vim'
+
+[[plugins]]
+repo = 'github/copilot.vim'
+
+[[plugins]]
+repo = 'koron/nyancat-vim'
+
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+hook_add = '''
+nmap p <Plug>(yankround-p)
+xmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+xmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+'''
+# [[plugins]]
+# repo = 'vim-denops/denops.vim'
+#
+# [[plugins]]
+# repo = 'Shougo/ddu-ui-ff'
+#
+# [[plugins]]
+# repo = 'Shougo/ddu-source-file_rec'
+#
+# [[plugins]]
+# repo = 'Shougo/ddu-filter-matcher_substring'
+#
+# [[plugins]]
+# repo = 'Shougo/ddu-kind-file'
+#
+# [[plugins]]
+# repo = 'Shougo/ddu.vim'
