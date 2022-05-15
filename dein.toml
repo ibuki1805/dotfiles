@@ -36,22 +36,26 @@ repo = 'ekalinin/Dockerfile.vim'
 
 [[plugins]]
 repo = 'github/copilot.vim'
+#depend node.js v14+ refs:https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04-ja
 
 [[plugins]]
 repo = 'koron/nyancat-vim'
 
 [[plugins]]
 repo = 'LeafCage/yankround.vim'
-hook_add = '''
-nmap p <Plug>(yankround-p)
-xmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap gp <Plug>(yankround-gp)
-xmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
-'''
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+on_fit = ['python']
+merged=0
+rev="release"
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+
 # [[plugins]]
 # repo = 'vim-denops/denops.vim'
 #

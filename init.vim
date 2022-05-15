@@ -51,6 +51,8 @@ set nowritebackup "never make backup before overwriting.
 set mouse=a "enable use mouse.
 
 "key config
+"leader key
+let mapleader = "\<SPACE>"
 "escape from insert mode by jj
 inoremap jj <Esc>
 "move beyond row.
@@ -68,12 +70,17 @@ nnoremap P ]P
 "enable backspace beyond rows
 set backspace=indent,eol,start
 "window control
-nnoremap <C-w>s :%s<space>/
-nnoremap <C-w>\| :vsplit<space>
-nnoremap <C-w>- :split<space>
+nnoremap <Leader>s :%s<space>
+nnoremap <Leader>\| :vsplit<space>
+nnoremap <Leader>- :split<space>
 nnoremap <C-d> :close<cr>
+"window move
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l
+nnoremap <Leader>w <C-w>w
 
-"split window default
 
 "edit setting
 "yunk to clipboard
@@ -140,24 +147,8 @@ if has('persistent_undo')
   set undofile
 endif
 
-" nerdtree
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
-" vim-airline
-let g:airline_theme = 'molokai'
-let g:airline_powerline_fonts = 1
-let g:airline_section_a = airline#section#create(['mode', 'crypt'])
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-
-augroup cpp-path
-    autocmd!
-    autocmd FileType cpp setlocal path=.,/usr/include,/usr/local/include,/opt/ros/noetic/include,/home/ros_catkin_ws/devel/include
-augroup END
 
 " ale
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
@@ -201,121 +192,13 @@ command! SudoWrite call s:sudo_write_current_buffer()
 command! -nargs=* T split | wincmd j | resize 20 | terminal <args>
 autocmd TermOpen * startinsert
 
-"yankround settings
-nmap p <Plug>(yankround-p)
-xmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap gp <Plug>(yankround-gp)
-xmap gp <Plug>(yankround-gp)
-nmap gP <Plug>(yankround-gP)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
 
-"ddu settings
-
-"You must set the default ui.
-" Note: ff ui
-" https://github.com/Shougo/ddu-ui-ff
-" call ddu#custom#patch_global({
-"          \ 'ui': 'ff',
-"          \ 'sources': [{'name': 'file_rec', 'params': {}}],
-"          \   'sourceOptions': {
-"          \     '_': {
-"          \       'matchers': ['matcher_substring'],
-"          \     },
-"          \   },
-"          \   'kindOptions': {
-"          \     'file': {
-"          \       'defaultAction': 'open',
-"          \     },
-"          \   }
-"          \ })
-"
-" autocmd FileType ddu-ff call s:ddu_my_settings()
-" function! s:ddu_my_settings() abort
-"   nnoremap <buffer><silent> <CR>
-"         \ <Cmd>call ddu#ui#ff#do_action('itemAction')<CR>
-"   nnoremap <buffer><silent> <Space>
-"         \ <Cmd>call ddu#ui#ff#do_action('toggleSelectItem')<CR>
-"   nnoremap <buffer><silent> i
-"         \ <Cmd>call ddu#ui#ff#do_action('openFilterWindow')<CR>
-"   nnoremap <buffer><silent> q
-"         \ <Cmd>call ddu#ui#ff#do_action('quit')<CR>
-" endfunction
-"
-" autocmd FileType ddu-ff-filter call s:ddu_filter_my_settings()
-" function! s:ddu_filter_my_settings() abort
-"   inoremap <buffer><silent> <CR>
-"   \ <Esc><Cmd>close<CR>
-"   nnoremap <buffer><silent> <CR>
-"   \ <Cmd>close<CR>
-"   nnoremap <buffer><silent> q
-"   \ <Cmd>close<CR>
-" endfunction
-"
-" call ddu#custom#patch_global({
-"     \   'uiParams': {
-"     \     'ff': {
-"     \       'split': 'floating',
-"     \     }
-"     \   },
-"     \ })
-
-" call ddu#custom#patch_global({
-"     \   'uiParams': {
-"     \     'ff': {
-"     \       'startFilter': v:true,
-"     \     }
-"     \   },
-"     \ })
-"
-" " You must set the default action.
-" " Note: file kind
-" " https://github.com/Shougo/ddu-kind-file
-" call ddu#custom#patch_global({
-"          \   'kindOptions': {
-"          \     'file': {
-"          \       'defaultAction': 'open',
-"          \     },
-"          \   }
-"          \ })
-"
-" " Specify matcher.
-" " Note: matcher_substring filter
-" " https://github.com/Shougo/ddu-filter-matcher_substring
-" call ddu#custom#patch_global({
-"          \   'sourceOptions': {
-"          \     '_': {
-"          \       'matchers': ['matcher_substring'],
-"          \     },
-"          \   }
-"          \ })
-"
-" Set default sources
-" Note: file source
-" https://github.com/Shougo/ddu-source-file
-"call ddu#custom#patch_global({
-"    \ 'sources': [{'name': 'file', 'params': {}}],
-"    \ })
-
-" Call default sources
-"call ddu#start({})
-
-" Set buffer-name specific configuration
-"call ddu#custom#patch_local('files', {
-"    \ 'sources': [
-"    \   {'name': 'file', 'params': {}},
-"    \   {'name': 'file_old', 'params': {}},
-"    \ ],
-"    \ })
-
-" Specify buffer name
-"call ddu#start({'name': 'files'})
-
-" Specify source with params
-" Note: file_rec source
-" https://github.com/Shougo/ddu-source-file_rec
-"call ddu#start({'sources': [
-"    \ {'name': 'file_rec', 'params': {'path': expand('~')}}
-"    \ ]})
-
+"load settings of plugins
+source ~/dotfiles/plugin/airline.vim
+source ~/dotfiles/plugin/nerdtree.vim
+source ~/dotfiles/plugin/deoplete.vim
+source ~/dotfiles/plugin/yankround.vim
+source ~/dotfiles/plugin/coc.vim
+source ~/dotfiles/plugin/denite.vim
+source ~/dotfiles/plugin/vim-figitive.vim
+" source ~/dotfiles/pluvim-figitive.vim
