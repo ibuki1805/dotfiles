@@ -79,7 +79,11 @@ nnoremap <Leader>h <C-w>h
 nnoremap <Leader>j <C-w>j
 nnoremap <Leader>k <C-w>k
 nnoremap <Leader>l <C-w>l
-nnoremap <Leader>w <C-w>w
+nnoremap <Leader><Leader> <C-w>w
+nnoremap <Leader><Left> <C-w><Left>
+nnoremap <Leader><Right> <C-w><Right>
+nnoremap <Leader><Up> <C-w><Up>
+nnoremap <Leader><Down> <C-w><Down>
 
 
 "edit setting
@@ -201,4 +205,5 @@ source ~/dotfiles/plugin/yankround.vim
 source ~/dotfiles/plugin/coc.vim
 source ~/dotfiles/plugin/denite.vim
 source ~/dotfiles/plugin/vim-figitive.vim
-" source ~/dotfiles/pluvim-figitive.vim
+source ~/dotfiles/plugin/vim-quickrun.vim
+" source ~/dotfiles/plugin/ddu.vim
