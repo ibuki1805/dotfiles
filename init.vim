@@ -48,7 +48,7 @@ set autoread "changed after opend file on vim and not edited on vim update the f
 set hidden "allow open other files without saving current file.
 set showcmd "show on the entering command on status.
 set nowritebackup "never make backup before overwriting.
-set mouse=a "enable use mouse.
+" set mouse=a "enable use mouse.
 
 "key config
 "leader key
@@ -84,7 +84,11 @@ nnoremap <Leader>w <C-w>w
 
 "edit setting
 "yunk to clipboard
-set clipboard=unnamedplus
+"for wsl2
+" set clipboard&
+" set clipboard^=unnamedplus
+"for native ubuntu20.04
+" set clipboard=unnamedplus
 "always global
 set gdefault
 "delete space located the end of row when save the file

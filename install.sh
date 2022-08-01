@@ -48,6 +48,7 @@ echo "==="
 
 pip3 install pynvim
 pip3 install --update msgpack
+pip3 install --user pynvim --upgrade msgpack
 
 echo "installing nodejs 14.x"
 cd ${HOME}

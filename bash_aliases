@@ -45,6 +45,16 @@ function cb()
     cd $dir
 }
 
+function rmaster_set()
+{
+    if [ $# -eq 0 ]; then
+        echo "please enter machine name"
+    else
+        export ROS_MASTER_URI=http://$1:11311
+    fi
+    echo "ROS_MASTER_URI is $ROS_MASTER_URI"
+}
+
 alias vim="nvim"
 alias vi="nvim"
 alias dsp="~/dotfiles/tmux_split.sh"
