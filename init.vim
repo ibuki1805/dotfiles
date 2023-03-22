@@ -166,7 +166,8 @@ let g:ale_open_list = 1
 let g:ale_keep_list_window_open = 0
 let g:ale_list_window_size = 3
 let g:airline#extensions#ale#enabled = 1
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = '/home/amsl/.pyenv/versions/3.9.4/bin/python'
+" let g:python3_host_prog = '/usr/bin/python3'
 
 function! s:sudo_write_current_buffer() abort
     if has('nvim')
@@ -206,4 +207,7 @@ source ~/dotfiles/plugin/coc.vim
 source ~/dotfiles/plugin/denite.vim
 source ~/dotfiles/plugin/vim-figitive.vim
 source ~/dotfiles/plugin/vim-quickrun.vim
+source ~/dotfiles/plugin/treesitter.vim
+" source ~/dotfiles/plugin/qpdfciew.vim
+" source ~/dotfiles/plugin/vimtex.vim
 " source ~/dotfiles/plugin/ddu.vim

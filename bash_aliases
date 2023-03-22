@@ -66,6 +66,6 @@ function remote_page_open()
     if [ $# -ne 2 ]; then
         echo "please enter whith machine name and url"
     else
-        ssh -y -YC $1 -t google-chrome $2
+        ssh -y -YC $1 -t 'export DISPLAY=0 && google-chrome $2'
     fi
 }

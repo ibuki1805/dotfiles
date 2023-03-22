@@ -31,6 +31,15 @@ repo = 'roxma/vim-hug-neovim-rpc'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 
+# [[plugins]]
+# repo = 'zchee/deoplete-clang'
+# hook_source = '''
+#     let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-10/lib/libclang-10.0.0.so'
+#     let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+# '''
+# on_ft = ['c', 'cpp', 'cmake']
+# depends = ['deoplete.nvim']
+
 [[plugins]]
 repo = 'ekalinin/Dockerfile.vim'
 
@@ -46,9 +55,9 @@ repo = 'LeafCage/yankround.vim'
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
-on_fit = ['python']
+on_fit = ['python', 'c', 'cpp', 'cmake']
 merged=0
-rev="release"
+rev= 'release'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
@@ -62,6 +71,14 @@ repo = 'thinca/vim-quickrun'
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+
+# [[plugins]]
+# repo = 'lervag/vimtex'
+
+# [[plugins]]
+# repo = 'dense-analysis/ale'
 
 # [[plugins]]
 # repo = 'vim-denops/denops.vim'
